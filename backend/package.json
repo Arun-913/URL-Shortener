@@ -19,6 +19,6 @@
     "shortid": "^2.2.16"
   },
   "devDependencies": {
-    "prisma": "^5.12.1"
+    "prisma": "^5.13.0"
   }
 }

@@ -1,16 +1,13 @@
-import express from 'express';
+import express, {Request, Response} from 'express';
 const app = express();
 import cors from 'cors';
 import {handleGenerateNewShortURL, handleRedirect, handleUserUrl} from './controllers/url';
 import { handleUserSignUp, handleUserSignIn } from './controllers/user';
-import { Request, Response } from 'express'; 
 
 app.use(express.json());
 app.use(cors());
 
-app.get('/', (req: Request, res: Response)=> {
-    res.send('Server is running');
-});
+app.get('/', (req:Request, res:Response)=> res.send('Server is running'));
 app.post('/post-url', handleGenerateNewShortURL);
 app.get('/:shortId',  handleRedirect);
 app.post('/signup', handleUserSignUp);
