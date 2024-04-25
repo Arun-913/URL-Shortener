@@ -3,6 +3,7 @@ const app = express();
 import cors from 'cors';
 import {handleGenerateNewShortURL, handleRedirect, handleUserUrl} from './controllers/url';
 import { handleUserSignUp, handleUserSignIn } from './controllers/user';
+const PORT = process.env.PORT || 8080;
 
 app.use(express.json());
 app.use(cors());
@@ -14,4 +15,4 @@ app.post('/signup', handleUserSignUp);
 app.post('/signin', handleUserSignIn);
 app.post('/user-url', handleUserUrl);
 
-app.listen(8080, () => console.log("Server started at port 8080"));
+app.listen(PORT, () => console.log(`Server started at port ${PORT}`));
